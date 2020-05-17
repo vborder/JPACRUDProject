@@ -17,8 +17,8 @@
 	<br>
 	
 	<table>
-	<td><a href="addRestForm.do">Add</a>	
-	<td><a href="deleteRestaurant.do">Delete</a>
+	<td><a href="addRestForm.do">Add<br>restaurant</a>	
+	<td><a href="deleteRestaurant.do">Delete<br>restaurant</a>
 	</table>
 	
 	<h4>Select a Restaurant:</h4>
