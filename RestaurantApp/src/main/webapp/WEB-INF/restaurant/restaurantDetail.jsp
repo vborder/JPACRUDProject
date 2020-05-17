@@ -7,6 +7,14 @@
 <title>Restaurant Details</title>
 </head>
 <body>
-	<h1>Restaurant: ${restaurant.name }</h1>
+	<h2>Restaurant: ${restaurant.name }</h2>
+
+	<div>
+		<p class="text-black">>
+		Meal: ${restaurant.meal}
+		Calories: ${restaurant.calories}
+		</p>
+	</div>
+	
 </body>
 </html>

@@ -5,10 +5,11 @@ import java.util.List;
 import com.skilldistillery.restaurants.entities.Restaurant;
 
 public interface RestaurantDAO {
-	public Restaurant findById(int rId);
+	public Restaurant findById(int restId);
 	List<Restaurant> findAll();
-	public List<Restaurant> findMealsByKeyword(String keyword);
+//	public List<Restaurant> findMealsByKeyword(String keyword);
 	public Restaurant createRestaurant(Restaurant restaurant);
-	public boolean updateRestaurant(Restaurant restaurant);
-	public boolean deleteRestaurant(int rid);
+	public Restaurant updateRestaurant(int restId, Restaurant restaurant);
+	public boolean deleteRestaurant(int restId);
+//	List<Restaurant> findMealsByPrice(int minId, int maxId);
 }

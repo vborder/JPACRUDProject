@@ -1,5 +1,6 @@
 package com.skilldistillery.restaurants.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,13 +12,11 @@ public class Restaurant {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
 	private String name;
-
 	private String meal;
-
-	private Double price;
-
+	
+	@Column(name="price")
+	private Double mealPrice;
 	private Integer calories;
 
 	public Restaurant(int id, String name, String meal, double mealPrice, int calories) {
@@ -25,7 +24,7 @@ public class Restaurant {
 		this.id = id;
 		this.name = name;
 		this.meal = meal;
-		this.price = mealPrice;
+		this.mealPrice = mealPrice;
 		this.calories = calories;
 	}
 
@@ -58,12 +57,12 @@ public class Restaurant {
 		this.meal = meal;
 	}
 
-	public double getPrice() {
-		return price;
+	public double getMealPrice() {
+		return mealPrice;
 	}
 
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setMealPrice(Double mealPrice) {
+		this.mealPrice = mealPrice;
 	}
 
 	public int getCalories() {
@@ -76,7 +75,7 @@ public class Restaurant {
 
 	@Override
 	public String toString() {
-		return "Restaurant [id=" + id + ", name=" + name + ", meal=" + meal + ", price=" + price + ", calories="
+		return "Restaurant [id=" + id + ", name=" + name + ", meal=" + meal + ", mealPrice=" + mealPrice + ", calories="
 				+ calories + "]";
 	}
 }

@@ -31,7 +31,7 @@ class RestaurantTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		restaurant = em.find(Restaurant.class, 1);
+		restaurant = em.find(Restaurant.class, 2);
 	}
 
 	@AfterEach
@@ -39,11 +39,14 @@ class RestaurantTest {
 		em.close();
 		restaurant = null;
 	}
-
+	
 	@Test
-	void test() {
+	void test_Restaurant_entity_mapping() {
 		assertNotNull(restaurant);
-		assertEquals("McDonalds", restaurant.getName());
+		assertEquals("Starbucks Coffee", restaurant.getName());
+		assertEquals("Roasted Tomato and Mozzarella Panini", restaurant.getMeal());
+//		assertEquals("", restaurant.getPrice()); // test null values?
+		assertEquals(420, restaurant.getCalories());
+		
 	}
-
 }

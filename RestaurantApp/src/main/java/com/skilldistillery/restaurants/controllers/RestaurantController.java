@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.restaurants.data.RestaurantDAO;
@@ -21,53 +22,52 @@ public class RestaurantController {
 	public String index(Model model) {
 		List<Restaurant> restaurants = dao.findAll();
 		model.addAttribute("restaurants", restaurants);
+		
 		return "index";
 	}
 
-	@RequestMapping(path="getRestaurant.do")
-	public String findRestaurant(@RequestParam Integer rid, Model model) {
-		Restaurant r = dao.findById(rid);
+	@RequestMapping(path = "getRestaurant.do", method = RequestMethod.GET)
+	public String findRestaurant(@RequestParam("rid") Integer restId, Model model) {
+		Restaurant r = dao.findById(restId);
 		model.addAttribute("restaurant", r);
+		
 		return "restaurant/restaurantDetail";
 	}
 
-	@RequestMapping(path="getMeal.do")
-	public String findMeal(String keyword, Model model) {
-		List<Restaurant> restaurant = dao.findMealsByKeyword(keyword);
-		model.addAttribute("meal", restaurant);
-		return "mealDetail";
+	@RequestMapping(path = "addRestForm.do", method = RequestMethod.GET)
+	public String addRestaurantPage() {
+		
+		return "restaurant/addRestForm";
 	}
-
-	@RequestMapping(path="addRestaurant.do")
+	
+	@RequestMapping(path = "addRestaurant.do", method = RequestMethod.POST)
 	public String addRestaurant(Restaurant restaurant, Model model) {
 		Restaurant r = dao.createRestaurant(restaurant);
-
-		if (r != null) {
-			model.addAttribute("restaurant", r);
-			return "additionComplete";
-		} else {
-			return "index";
-		}
+		model.addAttribute("restaurant", r);
+		
+		return "restaurant/additionComplete";
 	}
 
-	@RequestMapping(path="updateRestaurant.do")
-	public String updateRestaurant(Restaurant restaurant, Model model) {
-		boolean r = dao.updateRestaurant(restaurant);
-
-		if (r) {
-			model.addAttribute("restaurant", r);
-			return "updateComplete";
-		} else {
-			return "index";
-		}
+	@RequestMapping(path = "updateRestPage.do", method = RequestMethod.POST)
+	public String updateRestaurantPage(@RequestParam("rest") int restId, Model model) {
+		Restaurant r = dao.findById(restId);
+		model.addAttribute("restaurant", r);
+		
+		return "restaurant/updateRestForm";
+	}
+		
+	@RequestMapping(path = "updateRestaurant.do", method = RequestMethod.POST)
+	public String updateRestaurant(int restId, Restaurant restaurant) {
+		dao.updateRestaurant(restId, restaurant);
+		
+		return "restaurant/updateComplete";
 	}
 
-//	@RequestMapping(path="")
-//	public String deleteRestaurant(int rId) {
-//		boolean r = dao.deleteRestaurant(rId);
-//		
-//		if()
-//		return null;
-//		
-//	}
+	@RequestMapping(path = "deleteRestaurant.do")
+	public String deleteRestaurant(int rid) {
+		Restaurant r = dao.findById(rid);
+		dao.deleteRestaurant(rid);
+		
+		return "restaurant/deleteComplete";
+	}
 }
