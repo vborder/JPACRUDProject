@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Item updated</title>
 </head>
 <body>
-
+<h3>The restaurant was updated.</h3>
+<a href="http://localhost:8082/" > Click here to go back to the home page. </a >
 </body>
 </html>

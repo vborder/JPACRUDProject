@@ -16,7 +16,10 @@
 	</form>
 	<br>
 	
-	<td><a href="addRestForm.do">Add a restaurant</a>
+	<table>
+	<td><a href="addRestForm.do">Add</a>	
+	<td><a href="deleteRestaurant.do">Delete</a>
+	</table>
 	
 	<h4>Select a Restaurant:</h4>
 	<table>

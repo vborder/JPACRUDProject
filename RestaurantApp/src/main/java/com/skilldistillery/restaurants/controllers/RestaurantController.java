@@ -48,17 +48,25 @@ public class RestaurantController {
 		return "restaurant/additionComplete";
 	}
 
-	@RequestMapping(path = "updateRestPage.do", method = RequestMethod.POST)
-	public String updateRestaurantPage(@RequestParam("rest") int restId, Model model) {
-		Restaurant r = dao.findById(restId);
+//	@RequestMapping(path = "updateRestForm.do", method = RequestMethod.GET)
+//	public String updateRestaurantPage(Integer restId, Model model) {
+//		Restaurant r = dao.findById(restId);
+//		model.addAttribute("restaurant", r);
+//		
+//		return "restaurant/updateRestForm";
+//	}
+	
+	@RequestMapping(path = "updateRestForm.do", method = RequestMethod.GET)
+	public String updateRestaurantPage(int rid, Model model) {
+		Restaurant r = dao.findById(rid);
 		model.addAttribute("restaurant", r);
 		
 		return "restaurant/updateRestForm";
 	}
 		
 	@RequestMapping(path = "updateRestaurant.do", method = RequestMethod.POST)
-	public String updateRestaurant(int restId, Restaurant restaurant) {
-		dao.updateRestaurant(restId, restaurant);
+	public String updateRestaurant(@RequestParam("id") int rid, Restaurant restaurant, Model model) {
+		dao.updateRestaurant(rid, restaurant);
 		
 		return "restaurant/updateComplete";
 	}

@@ -19,7 +19,7 @@ public class Restaurant {
 	private Double mealPrice;
 	private Integer calories;
 
-	public Restaurant(int id, String name, String meal, double mealPrice, int calories) {
+	public Restaurant(int id, String name, String meal, Double mealPrice, Integer calories) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -57,7 +57,7 @@ public class Restaurant {
 		this.meal = meal;
 	}
 
-	public double getMealPrice() {
+	public Double getMealPrice() {
 		return mealPrice;
 	}
 
@@ -65,7 +65,7 @@ public class Restaurant {
 		this.mealPrice = mealPrice;
 	}
 
-	public int getCalories() {
+	public Integer getCalories() {
 		return calories;
 	}
 

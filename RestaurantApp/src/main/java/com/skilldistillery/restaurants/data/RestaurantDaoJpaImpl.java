@@ -60,9 +60,11 @@ public class RestaurantDaoJpaImpl implements RestaurantDAO {
 	}
 
 	@Override
-	public Restaurant updateRestaurant(int restId, Restaurant restaurant) {
-		String jpql = "SELECT r FROM Restaurant r WHERE r.id = newId";
-		Restaurant updatedRest =em.createQuery(jpql, Restaurant.class).setParameter("newId", restId).getSingleResult();
+	public Restaurant updateRestaurant(int rid, Restaurant restaurant) {
+//		String jpql = "SELECT r FROM Restaurant r WHERE r.id = newId";
+//		Restaurant updatedRest =em.createQuery(jpql, Restaurant.class).setParameter("newId", restId).getSingleResult();
+		Restaurant updatedRest =em.find(Restaurant.class, rid);
+		
 				updatedRest.setName(restaurant.getName());
 				updatedRest.setMeal(restaurant.getMeal());
 				updatedRest.setMealPrice(restaurant.getMealPrice());
@@ -70,6 +72,7 @@ public class RestaurantDaoJpaImpl implements RestaurantDAO {
 		
 		em.flush();
 		em.close();
+		
 		return updatedRest;
 	}
 

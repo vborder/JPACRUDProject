@@ -16,5 +16,10 @@
 		</p>
 	</div>
 	
+	<div>
+	<table>
+	<td><a href="updateRestForm.do?rid=${restaurant.id}">Update</a>
+	</div>
+	
 </body>
 </html>

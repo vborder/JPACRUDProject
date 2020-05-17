@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<FORM action="additionComplete.do" method="POST">
+<FORM action="addRestaurant.do" method="POST">
 		<P>
 			<LABEL for="name">Restaurant name: </LABEL> <INPUT type="text" id="name"
 				placeholder="name" name="name" maxlength="255"  required><BR>
@@ -17,13 +17,11 @@
 			<LABEL for="meal">Meal/menu item: </LABEL> <INPUT type="text"id="meal"
 			 placeholder="meal" name="meal" maxlength="255" required><BR>
 				
-				
 			<LABEL for="price">Price: </LABEL> <INPUT type="number" min="0" id="price" 
-			placeholder="price" name="price" maxlength="255" required><BR>
+			placeholder="price" name="price" maxlength="255"><BR>
 				
-				 
 			<LABEL for="calories">Calories: </LABEL> <INPUT type="number" id="calories" 
-			min="1" placeholder="calories" name="calories" maxlength="255"  required><BR>
+			min="1" placeholder="calories" name="calories" maxlength="255"><BR>
 			
 			<INPUT type="submit" value="Send"> <INPUT type="reset">
 			
