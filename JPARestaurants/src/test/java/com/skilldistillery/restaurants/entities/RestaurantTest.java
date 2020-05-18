@@ -45,7 +45,7 @@ class RestaurantTest {
 		assertNotNull(restaurant);
 		assertEquals("Starbucks Coffee", restaurant.getName());
 		assertEquals("Roasted Tomato and Mozzarella Panini", restaurant.getMeal());
-//		assertEquals("", restaurant.getPrice()); // test null values?
+		assertEquals(5.65, restaurant.getMealPrice());
 		assertEquals(420, restaurant.getCalories());
 		
 	}
