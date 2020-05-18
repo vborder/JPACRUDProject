@@ -1,9 +1,9 @@
 # JPACRUDProject
 
 ## Overview
-This is a CRUD application designed to show fast food options for the Mediterranen diet. Users of the application will be able to read restaurant information, create new restaurants, and add and delete menu items, calorie information and entree prices from a database for display on a website.
+This is a CRUD application designed to show fast food options for the Mediterranen diet. Users of the application will be able to read restaurant information, create new restaurants, and add and delete menu items, calorie information, and entree prices from a database for display on a website.
 
-To use the application, users can search for a restaurant by ID, or click on a table of links that take them directly to a restaurant's page. The restaurant's page shows meal, price and calorie information, and contains options to update and delete the restaurant record.  
+To use the application, users can search for a restaurant by ID, or click on a table of links that take them directly to a restaurant's page. The restaurant's page shows meal, price, and calorie information, and contains options to update and delete the restaurant record.  
 
 ## Technologies Used
 - Spring Tool Suit 4
