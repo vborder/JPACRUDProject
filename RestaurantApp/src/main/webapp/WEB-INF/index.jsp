@@ -8,17 +8,16 @@
 <title>Restaurant Options</title>
 </head>
 <body>
-	<h1>Welcome to the Restaurant MealFinder</h1>
+	<h1>Welcome to the Mediterranean Diet MealFinder</h1>
 
 	<form action="getRestaurant.do" method="GET">
 	Search by restaurant ID: <input type="text" name="rid" /> 
-	<input type="submit" value="Show Restaurant Details" />
+	<input type="submit" value="Submit" />
 	</form>
 	<br>
 	
 	<table>
 	<td><a href="addRestForm.do">Add<br>restaurant</a>	
-	<td><a href="deleteRestaurant.do">Delete<br>restaurant</a>
 	</table>
 	
 	<h4>Select a Restaurant:</h4>
