@@ -9,6 +9,7 @@ To use the application, users can search for a restaurant by ID, or click on a t
 - Spring Tool Suit 4
 - Atom
 - MySQL Workbench
+- Gradle
 - Java
 - GitHub/Git
 - MAMP
